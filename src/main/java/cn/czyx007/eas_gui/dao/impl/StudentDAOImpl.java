@@ -15,8 +15,8 @@ public class StudentDAOImpl extends BaseDAO<Student> implements StudentDAO {
     @Override
     public boolean addStudent(Connection connection, Student student) {
         //language=MySQL
-        String sql = "insert into education_administration_system.student values (?,?,sha1(?),?,?,?)";
-        return update(connection,sql,student.getId(),student.getName(),student.getPassword(),student.getDepartment(),student.getGrade(),student.getStuClass()) > 0;
+        String sql = "insert into education_administration_system.student values (?,?,sha1(?),?,?,?,?,?)";
+        return update(connection,sql,student.getId(),student.getName(),student.getPassword(),student.getSex(),student.getBirth(),student.getDepartment(),student.getGrade(),student.getStuClass()) > 0;
     }
 
     @Override
@@ -27,13 +27,10 @@ public class StudentDAOImpl extends BaseDAO<Student> implements StudentDAO {
     }
 
     @Override
-    public boolean updateStudent(Connection connection, String id, String password, String department, Integer grade, String stuClass) {
+    public boolean updateStudent(Connection connection, String id, String department, Integer grade, String stuClass) {
         //language=MySQL
         String sql;
-        if (password != null){
-            sql = "update education_administration_system.student set password = sha1(?) where id = ?";
-            return update(connection,sql,password,id) > 0;
-        }else if (department != null){
+        if (department != null){
             sql = "update education_administration_system.student set department = ? where id = ?";
             return update(connection,sql,department,id) > 0;
         }else if (grade != null){
@@ -61,9 +58,23 @@ public class StudentDAOImpl extends BaseDAO<Student> implements StudentDAO {
     }
 
     @Override
+    public List<Student> getAllStudent(Connection connection) {
+        //language=MySQL
+        String sql = "select * from education_administration_system.student";
+        return search(connection,sql);
+    }
+
+    @Override
     public Long checkPassword(Connection connection, String id, String password) {
         //language=MySQL
         String sql = "select password = sha1(?) from education_administration_system.student where id = ?";
         return getValue(connection,sql,password,id);
+    }
+
+    @Override
+    public boolean changePassword(Connection connection, String id, String newPassword) {
+        //language=MySQL
+        String sql = "update education_administration_system.student set password = sha1(?) where id = ?";
+        return update(connection,newPassword,id) > 0;
     }
 }

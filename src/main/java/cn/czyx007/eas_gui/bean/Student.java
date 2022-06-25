@@ -1,5 +1,7 @@
 package cn.czyx007.eas_gui.bean;
 
+import java.time.LocalDate;
+
 /**
  * @author : 张宇轩
  * @createTime : 2022/6/24 - 22:07
@@ -8,6 +10,8 @@ public class Student {
     private String id;//学号
     private String name;//姓名
     private String password;//密码
+    private String sex;//性别
+    private LocalDate birth;//出生年月日
     private String department;//所在系
     private Integer grade;//年级
     private String stuClass;//班级
@@ -15,10 +19,12 @@ public class Student {
     public Student() {
     }
 
-    public Student(String id, String name, String password, String department, Integer grade, String stuClass) {
+    public Student(String id, String name, String password, String sex, LocalDate birth, String department, Integer grade, String stuClass) {
         this.id = id;
         this.name = name;
         this.password = password;
+        this.sex = sex;
+        this.birth = birth;
         this.department = department;
         this.grade = grade;
         this.stuClass = stuClass;
@@ -72,12 +78,30 @@ public class Student {
         this.stuClass = stuClass;
     }
 
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
+    public LocalDate getBirth() {
+        return birth;
+    }
+
+    public void setBirth(LocalDate birth) {
+        this.birth = birth;
+    }
+
     @Override
     public String toString() {
         return "Student{" +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", password='" + password + '\'' +
+                ", sex='" + sex + '\'' +
+                ", birth=" + birth +
                 ", department='" + department + '\'' +
                 ", grade=" + grade +
                 ", stuClass='" + stuClass + '\'' +

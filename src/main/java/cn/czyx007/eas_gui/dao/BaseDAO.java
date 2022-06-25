@@ -5,7 +5,10 @@ import cn.czyx007.eas_gui.dbc.JDBCUtils;
 import java.lang.reflect.Field;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
+import java.math.BigDecimal;
 import java.sql.*;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.List;
 import java.sql.Connection;
@@ -78,6 +81,12 @@ public abstract class BaseDAO<T> {
                 T t = clazz.newInstance();
                 for (int i = 0; i < columnCount; i++) {
                     Object columnValue = resultSet.getObject(i + 1);
+                    if (columnValue instanceof BigDecimal){
+                        columnValue = Double.parseDouble(columnValue.toString());
+                    }
+                    if (columnValue instanceof LocalDateTime){
+                        columnValue = Date.from(((LocalDateTime) columnValue).atZone(ZoneId.systemDefault()).toInstant());
+                    }
 
                     //获取列的别名（没有起别名时默认就是列名）
                     String columnLabel = metaData.getColumnLabel(i + 1);
