@@ -2,7 +2,9 @@ package cn.czyx007.eas_gui;
 
 import cn.czyx007.eas_gui.bean.Faculty;
 import cn.czyx007.eas_gui.bean.Student;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.text.Text;
 
 /**
@@ -12,15 +14,18 @@ import javafx.scene.text.Text;
 public class FacultyMainController {
     static Faculty faculty;
 
-    @FXML Text showFacultyId;
-    @FXML Text showFacultyName;
-    @FXML Text showFacultyDepartment;
-    @FXML Text showFacultyTitle;
+    @FXML
+    private Label showInfo;
 
     public void onMainViewButtonClick() {
-        showFacultyId.setText(faculty.getId());
-        showFacultyName.setText(faculty.getName());
-        showFacultyDepartment.setText(faculty.getDepartment());
-        showFacultyTitle.setText(faculty.getTitle());
+        showInfo.setText("职工号：" + faculty.getId() + "\n" +
+                         "姓名：" + faculty.getName() + "\n" +
+                         "性别：" + faculty.getSex() + "\n" +
+                         "出生年月日：" + faculty.getBirth() + "\n" +
+                         "部门/所在系：" + faculty.getDepartment() + "\n" +
+                         "职称：" + faculty.getTitle());
+    }
+
+    public void changePassword() {
     }
 }

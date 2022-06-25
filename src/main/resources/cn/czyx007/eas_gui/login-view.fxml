@@ -41,28 +41,19 @@
             <RadioButton fx:id="radioButtonFaculty" mnemonicParsing="false" text="教职工">
                <toggleGroup>
                   <ToggleGroup fx:id="chooseStatus" />
-               </toggleGroup></RadioButton>
-            <RadioButton fx:id="radioButtonStudent" mnemonicParsing="false" text="学生" toggleGroup="$chooseStatus" GridPane.columnIndex="1" />
+               </toggleGroup>
+               <GridPane.margin>
+                  <Insets left="20.0" />
+               </GridPane.margin></RadioButton>
+            <RadioButton fx:id="radioButtonStudent" mnemonicParsing="false" text="学生" toggleGroup="$chooseStatus" GridPane.columnIndex="1">
+               <GridPane.margin>
+                  <Insets left="30.0" />
+               </GridPane.margin></RadioButton>
          </children>
       </GridPane>
+       <Button onAction="#onLoginButtonClick" prefHeight="30.0" prefWidth="51.0" text="登录" />
        
    
        <Label fx:id="loginText" />
-      <GridPane>
-        <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-        </columnConstraints>
-        <rowConstraints>
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-        </rowConstraints>
-         <children>
-             <Button onAction="#onLoginButtonClick" prefHeight="30.0" prefWidth="51.0" text="登录" GridPane.columnIndex="1">
-               <GridPane.margin>
-                  <Insets left="50.0" />
-               </GridPane.margin>
-            </Button>
-         </children>
-      </GridPane>
    </children>
 </VBox>

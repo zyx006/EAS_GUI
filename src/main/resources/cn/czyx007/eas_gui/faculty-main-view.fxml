@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.text.*?>
 <?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
@@ -13,17 +11,19 @@
         <items>
           <Button mnemonicParsing="false" onAction="#onMainViewButtonClick" text="主页" />
             <Button mnemonicParsing="false" text="修改信息" />
+            <Button mnemonicParsing="false" onAction="#changePassword" text="修改密码" />
             <Button mnemonicParsing="false" text="后台系统" />
             <Button mnemonicParsing="false" text="退出登录" />
         </items>
       </ToolBar>
-      <Text layoutX="23.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="职工号：" />
-      <Text layoutX="23.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="姓名：" />
-      <Text layoutX="23.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" text="部门/所在系：" />
-      <Text layoutX="23.0" layoutY="128.0" strokeType="OUTSIDE" strokeWidth="0.0" text="职称：" />
-      <Text fx:id="showFacultyId" layoutX="83.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" />
-      <Text fx:id="showFacultyName" layoutX="68.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" />
-      <Text fx:id="showFacultyDepartment" layoutX="68.0" layoutY="128.0" strokeType="OUTSIDE" strokeWidth="0.0" />
-      <Text fx:id="showFacultyTitle" layoutX="120.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+      <Label fx:id="showInfo" layoutX="14.0" layoutY="58.0" prefHeight="262.0" prefWidth="571.0" />
+      <TextField fx:id="getDepartment" layoutX="211.0" layoutY="63.0" visible="false" />
+      <Label fx:id="changeDepartment" layoutX="21.0" layoutY="68.0" prefHeight="20.0" prefWidth="176.0" text="请输入新的部门/所在系：" visible="false" />
+      <Label fx:id="changeTitle" layoutX="21.0" layoutY="108.0" text="请输入新的职称：" visible="false" />
+      <TextField fx:id="getTitle" layoutX="211.0" layoutY="103.0" visible="false" />
+      <Label fx:id="changePassword" layoutX="32.0" layoutY="78.0" text="请输入新密码：" visible="false" />
+      <Label fx:id="ensurePassword" layoutX="32.0" layoutY="118.0" text="请确认新密码：" visible="false" />
+      <PasswordField fx:id="getPassword" layoutX="147.0" layoutY="73.0" visible="false" />
+      <PasswordField fx:id="getEnsurePassword" layoutX="147.0" layoutY="113.0" visible="false" />
    </children>
 </AnchorPane>

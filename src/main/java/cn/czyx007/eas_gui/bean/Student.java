@@ -1,6 +1,7 @@
 package cn.czyx007.eas_gui.bean;
 
 import java.time.LocalDate;
+import java.util.Date;
 
 /**
  * @author : 张宇轩
@@ -11,7 +12,7 @@ public class Student {
     private String name;//姓名
     private String password;//密码
     private String sex;//性别
-    private LocalDate birth;//出生年月日
+    private Date birth;//出生年月日
     private String department;//所在系
     private Integer grade;//年级
     private String stuClass;//班级
@@ -19,7 +20,7 @@ public class Student {
     public Student() {
     }
 
-    public Student(String id, String name, String password, String sex, LocalDate birth, String department, Integer grade, String stuClass) {
+    public Student(String id, String name, String password, String sex, Date birth, String department, Integer grade, String stuClass) {
         this.id = id;
         this.name = name;
         this.password = password;
@@ -86,11 +87,11 @@ public class Student {
         this.sex = sex;
     }
 
-    public LocalDate getBirth() {
+    public Date getBirth() {
         return birth;
     }
 
-    public void setBirth(LocalDate birth) {
+    public void setBirth(Date birth) {
         this.birth = birth;
     }
 

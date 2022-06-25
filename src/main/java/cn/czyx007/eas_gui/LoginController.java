@@ -16,11 +16,14 @@ import javafx.stage.Stage;
 import java.sql.Connection;
 
 public class LoginController {
-    @FXML TextField userId;
-    @FXML PasswordField password;
-    @FXML RadioButton radioButtonFaculty;
-    @FXML RadioButton radioButtonStudent;
-
+    @FXML
+    private TextField userId;
+    @FXML
+    private PasswordField password;
+    @FXML
+    private RadioButton radioButtonFaculty;
+    @FXML
+    private RadioButton radioButtonStudent;
     @FXML
     private Label loginText;
 
