@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cn.czyx007.eas_gui.FacultyMainController">
+   <children>
+      <ToolBar layoutY="7.0" prefHeight="44.0" prefWidth="600.0">
+        <items>
+          <Button mnemonicParsing="false" onAction="#onMainViewButtonClick" text="主页" />
+            <Button mnemonicParsing="false" text="修改信息" />
+            <Button mnemonicParsing="false" text="后台系统" />
+            <Button mnemonicParsing="false" text="退出登录" />
+        </items>
+      </ToolBar>
+      <Text layoutX="23.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="职工号：" />
+      <Text layoutX="23.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="姓名：" />
+      <Text layoutX="23.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" text="部门/所在系：" />
+      <Text layoutX="23.0" layoutY="128.0" strokeType="OUTSIDE" strokeWidth="0.0" text="职称：" />
+      <Text fx:id="showFacultyId" layoutX="83.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+      <Text fx:id="showFacultyName" layoutX="68.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+      <Text fx:id="showFacultyDepartment" layoutX="68.0" layoutY="128.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+      <Text fx:id="showFacultyTitle" layoutX="120.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+   </children>
+</AnchorPane>

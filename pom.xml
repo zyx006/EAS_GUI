@@ -65,7 +65,7 @@
                         <!-- Default configuration for running with: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>cn.czyx007.eas_gui/cn.czyx007.eas_gui.HelloApplication</mainClass>
+                            <mainClass>cn.czyx007.eas_gui/cn.czyx007.eas_gui.MainApplication</mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
                             <jlinkImageName>app</jlinkImageName>

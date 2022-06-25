@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.*?>
+<?import javafx.scene.effect.*?>
+<?import java.lang.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cn.czyx007.eas_gui.HelloController">
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cn.czyx007.eas_gui.LoginController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
    <children>
-      <GridPane>
+      <GridPane prefHeight="60.0" prefWidth="244.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="94.0" minWidth="10.0" prefWidth="69.0" />
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="140.0" minWidth="10.0" prefWidth="131.0" />
@@ -21,13 +24,30 @@
         </rowConstraints>
          <children>
             <PasswordField fx:id="password" prefHeight="30.0" prefWidth="121.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <TextField GridPane.columnIndex="1" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="     账号：" wrappingWidth="70.0" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="     密码：" wrappingWidth="70" GridPane.rowIndex="1" />
+            <TextField fx:id="userId" prefHeight="30.0" prefWidth="148.0" GridPane.columnIndex="1" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="职工号/学号：" wrappingWidth="104.0" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="           密码：" wrappingWidth="94.0" GridPane.rowIndex="1" />
          </children>
       </GridPane>
+      <GridPane>
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <RadioButton fx:id="radioButtonFaculty" mnemonicParsing="false" text="教职工">
+               <toggleGroup>
+                  <ToggleGroup fx:id="chooseStatus" />
+               </toggleGroup></RadioButton>
+            <RadioButton fx:id="radioButtonStudent" mnemonicParsing="false" text="学生" toggleGroup="$chooseStatus" GridPane.columnIndex="1" />
+         </children>
+      </GridPane>
+       
    
-       <Label fx:id="welcomeText" />
+       <Label fx:id="loginText" />
       <GridPane>
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -40,11 +60,6 @@
              <Button onAction="#onLoginButtonClick" prefHeight="30.0" prefWidth="51.0" text="登录" GridPane.columnIndex="1">
                <GridPane.margin>
                   <Insets left="50.0" />
-               </GridPane.margin>
-            </Button>
-            <Button onAction="#onRegistryButtonClick" prefHeight="30.0" prefWidth="50.0" text="注册">
-               <GridPane.margin>
-                  <Insets left="25.0" />
                </GridPane.margin>
             </Button>
          </children>

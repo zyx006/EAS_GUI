@@ -22,28 +22,45 @@ public class FacultyDAOImpl extends BaseDAO<Faculty> implements FacultyDAO {
     @Override
     public boolean deleteFaculty(Connection connection, String id) {
         //language=MySQL
-        String sql = "";
-        return false;
+        String sql = "delete from education_administration_system.faculty where id = ?";
+        return update(connection,sql,id) > 0;
     }
 
     @Override
-    public boolean updateFaculty(Connection connection, String id) {
+    public boolean updateFaculty(Connection connection, String id,String password,String department,String title) {
         //language=MySQL
-        String sql = "";
+        String sql;
+        if (password != null){
+            sql = "update education_administration_system.faculty set password = sha1(?) where id = ?";
+            return update(connection,sql,password,id) > 0;
+        }else if (department != null){
+            sql = "update education_administration_system.faculty set department = ? where id = ?";
+            return update(connection,sql,department,id) > 0;
+        }else if (title != null){
+            sql = "update education_administration_system.faculty set title = ? where id = ?";
+            return update(connection,sql,title,id) > 0;
+        }
         return false;
     }
 
     @Override
     public Faculty getFacultyById(Connection connection, String id) {
         //language=MySQL
-        String sql = "";
-        return null;
+        String sql = "select * from education_administration_system.faculty where id = ?";
+        return search(connection, sql, id).get(0);
     }
 
     @Override
     public List<Faculty> getFacultyByName(Connection connection, String name) {
         //language=MySQL
-        String sql = "";
-        return null;
+        String sql = "select * from education_administration_system.faculty where name = ?";
+        return search(connection,sql,name);
+    }
+
+    @Override
+    public Long checkPassword(Connection connection, String id, String password) {
+        //language=MySQL
+        String sql = "select password = sha1(?) from education_administration_system.faculty where id = ?";
+        return getValue(connection,sql,password,id);
     }
 }
